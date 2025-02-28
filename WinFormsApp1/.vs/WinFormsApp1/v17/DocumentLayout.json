@@ -7,8 +7,16 @@
       "RelativeMoniker": "D:0:0:{8111DC6E-A6CA-49E1-8A84-D176C1AC121F}|WinFormsApp1.csproj|solutionrelative:giaodien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8111DC6E-A6CA-49E1-8A84-D176C1AC121F}|WinFormsApp1.csproj|d:\\appquanly\\winformsapp1\\giaodien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8111DC6E-A6CA-49E1-8A84-D176C1AC121F}|WinFormsApp1.csproj|solutionrelative:giaodien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{8111DC6E-A6CA-49E1-8A84-D176C1AC121F}|WinFormsApp1.csproj|d:\\appquanly\\winformsapp1\\taotaikhoannhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8111DC6E-A6CA-49E1-8A84-D176C1AC121F}|WinFormsApp1.csproj|solutionrelative:taotaikhoannhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8111DC6E-A6CA-49E1-8A84-D176C1AC121F}|WinFormsApp1.csproj|d:\\appquanly\\winformsapp1\\dao\\accountdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8111DC6E-A6CA-49E1-8A84-D176C1AC121F}|WinFormsApp1.csproj|solutionrelative:dao\\accountdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8111DC6E-A6CA-49E1-8A84-D176C1AC121F}|WinFormsApp1.csproj|d:\\appquanly\\winformsapp1\\taotaikhoannhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8111DC6E-A6CA-49E1-8A84-D176C1AC121F}|WinFormsApp1.csproj|solutionrelative:taotaikhoannhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +26,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -32,22 +44,48 @@
               "RelativeDocumentMoniker": "giaodien.cs",
               "ToolTip": "D:\\appquanly\\WinFormsApp1\\giaodien.cs",
               "RelativeToolTip": "giaodien.cs",
-              "ViewState": "AgIAAMEAAAAAAAAAAAAAANMAAABHAAAAAAAAAA==",
+              "ViewState": "AgIAAJ0AAAAAAAAAAAAiwKoAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T13:09:24.458Z",
+              "WhenOpened": "2025-02-28T00:32:20.394Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "giaodien.cs [Design]",
-              "DocumentMoniker": "D:\\appquanly\\WinFormsApp1\\giaodien.cs",
-              "RelativeDocumentMoniker": "giaodien.cs",
-              "ToolTip": "D:\\appquanly\\WinFormsApp1\\giaodien.cs [Design]",
-              "RelativeToolTip": "giaodien.cs [Design]",
+              "DocumentIndex": 3,
+              "Title": "taotaikhoannhanvien.cs [Design]",
+              "DocumentMoniker": "D:\\appquanly\\WinFormsApp1\\taotaikhoannhanvien.cs",
+              "RelativeDocumentMoniker": "taotaikhoannhanvien.cs",
+              "ToolTip": "D:\\appquanly\\WinFormsApp1\\taotaikhoannhanvien.cs [Design]",
+              "RelativeToolTip": "taotaikhoannhanvien.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T13:09:16.076Z",
+              "WhenOpened": "2025-02-27T23:12:11.717Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "taotaikhoannhanvien.cs",
+              "DocumentMoniker": "D:\\appquanly\\WinFormsApp1\\taotaikhoannhanvien.cs",
+              "RelativeDocumentMoniker": "taotaikhoannhanvien.cs",
+              "ToolTip": "D:\\appquanly\\WinFormsApp1\\taotaikhoannhanvien.cs",
+              "RelativeToolTip": "taotaikhoannhanvien.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAuwEUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T23:10:40.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AccountDAO.cs",
+              "DocumentMoniker": "D:\\appquanly\\WinFormsApp1\\DAO\\AccountDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\AccountDAO.cs",
+              "ToolTip": "D:\\appquanly\\WinFormsApp1\\DAO\\AccountDAO.cs",
+              "RelativeToolTip": "DAO\\AccountDAO.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowCMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T22:45:34.753Z",
+              "EditorCaption": ""
             }
           ]
         }

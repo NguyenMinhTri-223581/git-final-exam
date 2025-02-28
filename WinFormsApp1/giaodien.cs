@@ -10,19 +10,49 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.DAO;
 using WinFormsApp1.DTO;
+using static WinFormsApp1.taotaikhoannhanvien;
 
 namespace WinFormsApp1
 {
     public partial class giaodien : Form
     {
-        public giaodien()
+        private Account loginAccount;
+
+        public Account LoginAccount
+        {
+            get => loginAccount;
+            set
+            {
+                loginAccount = value;
+                if (loginAccount != null) // Kiểm tra null trước khi gọi ChangeAccount
+                {
+                    ChangeAccount(loginAccount.Type);
+                }
+            }
+        }
+
+
+        public giaodien(Account acc)
         {
             InitializeComponent();
+
+            this.LoginAccount = acc;
+
             loadTable();
             LoadCategory();
             LoadComboboxTable(soban);
+
         }
         #region Method
+
+        void ChangeAccount(int Type)
+        {
+
+            adminToolStripMenuItem.Enabled = Type == 1; //đang bị lỗi không chạy type
+
+            thôngTinTàiKhoảnToolStripMenuItem.Text += "("+ loginAccount.DisplayName +")";
+
+        }
 
         void LoadCategory()
         {
@@ -122,21 +152,59 @@ namespace WinFormsApp1
 
         }
 
-        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        
+        private void đăngXuấtToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
         private void tạoTàiKhoảnNhânViênToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            taotaikhoannhanvien t = new taotaikhoannhanvien();
+            taotaikhoannhanvien t = new taotaikhoannhanvien(LoginAccount);
+
+            t.UpdateAcount += T_UpdateAcount;
             t.ShowDialog();
+        }
+
+        void T_UpdateAcount(object? sender, AccountEvent e)
+        {
+            thôngTinTàiKhoảnToolStripMenuItem.Text = "Thông tin tài khoản (" + e.Acc.DisplayName + ")";
         }
 
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tAdmin tAdmin = new tAdmin();
+            tAdmin.loginAccount = LoginAccount;
+            tAdmin.InsertFood += TAdmin_InsertFood; 
+            tAdmin.DeleteFood += TAdmin_DeleteFood;
+            tAdmin.UpdateFood += TAdmin_UpdateFood;
+            
+
             tAdmin.ShowDialog();
+        }
+
+       
+
+        private void TAdmin_InsertFood(object? sender, EventArgs e)
+        {
+            LoadFoodListByCategoryID((tenmon.SelectedItem as Category).ID);
+            if (listViewhoadon.Tag != null)
+                showbill((listViewhoadon.Tag as Table).ID);
+        }
+
+        private void TAdmin_UpdateFood(object? sender, EventArgs e)
+        {
+            LoadFoodListByCategoryID((tenmon.SelectedItem as Category).ID);
+            if (listViewhoadon.Tag != null)
+                showbill((listViewhoadon.Tag as Table).ID);
+        }
+
+        private void TAdmin_DeleteFood(object? sender, EventArgs e)
+        {
+            LoadFoodListByCategoryID((tenmon.SelectedItem as Category).ID);
+            if (listViewhoadon.Tag != null)
+                showbill((listViewhoadon.Tag as Table).ID);
+            loadTable();
         }
         #endregion
 
@@ -165,6 +233,11 @@ namespace WinFormsApp1
         private void thêmmon_Click(object sender, EventArgs e)
         {
             Table table = listViewhoadon.Tag as Table;
+            if (table == null)
+            {
+                MessageBox.Show("Hãy chọn bàn");
+                return;
+            }
 
 
             int idBill = BillDAO.Instance.GetUncheckBillTableID(table.ID);
@@ -196,14 +269,14 @@ namespace WinFormsApp1
             string cleanedText = tongtien.Text.Replace(".", "").Replace("đ", "").Trim();
 
 
-            double totalPrice;
-            if (double.TryParse(cleanedText, NumberStyles.Any, CultureInfo.InvariantCulture, out totalPrice))           
+            double totalPrice; //bị rỗng giá tiền có thể bị xoá
+            if (double.TryParse(cleanedText, NumberStyles.Any, CultureInfo.InvariantCulture, out totalPrice))
 
-            if (string.IsNullOrWhiteSpace(tongtien.Text))
-            {
-                Console.WriteLine("Lỗi: Giá trị tổng tiền rỗng!");
-                return;
-            }
+                if (string.IsNullOrWhiteSpace(tongtien.Text))
+                {
+                    Console.WriteLine("Lỗi: Giá trị tổng tiền rỗng!");
+                    return;
+                }
 
 
 
@@ -215,7 +288,7 @@ namespace WinFormsApp1
             {
                 if (MessageBox.Show(string.Format("Bạn có chắc muốn thanh toán hoá đơn cho {0}\nTổng tiền - (Tổng tiền / 100) x Giảm Giá\n=> {1} - ({1} / 100) x {2} = {3} ", table.Name, totalPrice, discount, finalTotalPrice), "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
                 {
-                    BillDAO.Instance.CheckOut(idbill, discount);
+                    BillDAO.Instance.CheckOut(idbill, discount, (float)finalTotalPrice);
                     showbill(table.ID);
 
                     loadTable();
@@ -223,11 +296,11 @@ namespace WinFormsApp1
 
             }
         }
-       
+
 
         private void chuyenban_Click(object sender, EventArgs e)
         {
-            
+
 
 
             int id = (listViewhoadon.Tag as Table).ID;
@@ -240,6 +313,16 @@ namespace WinFormsApp1
                 loadTable();
             }
         }
-     #endregion
+        private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            taotaikhoannhanvien t = new taotaikhoannhanvien(LoginAccount);
+            t.ShowDialog();
+        }
+
+
+        #endregion
+
+
+        
     }
 }

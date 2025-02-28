@@ -22,10 +22,16 @@ namespace WinFormsApp1.DAO
              
         }
 
-        private BillInfoDAO()
-        { 
+        private BillInfoDAO() { }
+         
+
+        public void DeleteBillInfoByFoodID(int id)
+        {
+            DataProvider.Instance.ExecuteQuery("DELETE dbo.CTHOADON WHERE IDTHUCDON = " + id);
 
         }
+
+        
             public List<BillInfo> GetListBillInfo(int id)
         {
             List<BillInfo> listBillInfo = new List<BillInfo>();

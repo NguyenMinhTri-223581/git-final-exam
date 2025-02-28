@@ -35,5 +35,22 @@ namespace WinFormsApp1.DAO
              
             return list;
         }
+
+        public Category GetCategoryByID(int id)
+        {
+            Category category = null;
+            string query = "SELECT * FROM dbo.LOAIMON WHERE ID = "+id;
+            Console.WriteLine("Query: " + query);
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                 category = new Category(item);
+                return category;
+            }
+
+            return category;
+        }
     }
 }

@@ -32,7 +32,7 @@
             panel36 = new Panel();
             datlaimatkhautaikhoan = new Button();
             panel37 = new Panel();
-            comboBox5 = new ComboBox();
+            nudlaoitaikhoan = new NumericUpDown();
             panel38 = new Panel();
             loaitaikhoan = new Label();
             panel39 = new Panel();
@@ -50,11 +50,11 @@
             label12 = new Label();
             panel46 = new Panel();
             panel47 = new Panel();
-            textBox15 = new TextBox();
+            tenhienthi = new TextBox();
             tentaikhoan = new Label();
             pane = new Panel();
             panel49 = new Panel();
-            textBox16 = new TextBox();
+            tendangnhap = new TextBox();
             idtaikhoan = new Label();
             panel35 = new Panel();
             textBox10 = new TextBox();
@@ -71,7 +71,7 @@
             button6 = new Button();
             panel13 = new Panel();
             panel32 = new Panel();
-            comboBox6 = new ComboBox();
+            cbtrangthai = new ComboBox();
             panel33 = new Panel();
             trangthaiban = new Label();
             panel16 = new Panel();
@@ -121,11 +121,11 @@
             label2 = new Label();
             tendanhmuc = new Panel();
             panel11 = new Panel();
-            textBox1 = new TextBox();
+            txtendanhmuc = new TextBox();
             label3 = new Label();
             iddanhmuc = new Panel();
             panel15 = new Panel();
-            textBox3 = new TextBox();
+            txiddanhmuc = new TextBox();
             label4 = new Label();
             bangdanhmuc = new DataGridView();
             panel2 = new Panel();
@@ -138,17 +138,17 @@
             kiemthucan = new TextBox();
             timthucan = new Button();
             thucan17 = new Panel();
-            thucan14 = new Panel();
+            gia = new Panel();
             sotienthucan = new NumericUpDown();
             panel14 = new Panel();
             giathucan = new Label();
             thuan11 = new Panel();
-            comboBox1 = new ComboBox();
+            loiamuc = new ComboBox();
             panel12 = new Panel();
             danhmucthucan = new Label();
             thucan22 = new Panel();
             panel10 = new Panel();
-            textBox2 = new TextBox();
+            tenmon = new TextBox();
             tenmonan = new Label();
             thucan12 = new Panel();
             panel8 = new Panel();
@@ -172,6 +172,7 @@
             taikhoan.SuspendLayout();
             panel36.SuspendLayout();
             panel37.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nudlaoitaikhoan).BeginInit();
             panel39.SuspendLayout();
             panel40.SuspendLayout();
             panel41.SuspendLayout();
@@ -207,7 +208,7 @@
             thucan3.SuspendLayout();
             thucan13.SuspendLayout();
             thucan17.SuspendLayout();
-            thucan14.SuspendLayout();
+            gia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)sotienthucan).BeginInit();
             thuan11.SuspendLayout();
             thucan22.SuspendLayout();
@@ -257,10 +258,11 @@
             datlaimatkhautaikhoan.TabIndex = 5;
             datlaimatkhautaikhoan.Text = "Đặt lại mật khẩu";
             datlaimatkhautaikhoan.UseVisualStyleBackColor = true;
+            datlaimatkhautaikhoan.Click += datlaimatkhautaikhoan_Click;
             // 
             // panel37
             // 
-            panel37.Controls.Add(comboBox5);
+            panel37.Controls.Add(nudlaoitaikhoan);
             panel37.Controls.Add(panel38);
             panel37.Controls.Add(loaitaikhoan);
             panel37.Location = new Point(0, 142);
@@ -268,13 +270,13 @@
             panel37.Size = new Size(441, 69);
             panel37.TabIndex = 4;
             // 
-            // comboBox5
+            // nudlaoitaikhoan
             // 
-            comboBox5.FormattingEnabled = true;
-            comboBox5.Location = new Point(166, 22);
-            comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(260, 26);
-            comboBox5.TabIndex = 3;
+            nudlaoitaikhoan.Location = new Point(166, 24);
+            nudlaoitaikhoan.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            nudlaoitaikhoan.Name = "nudlaoitaikhoan";
+            nudlaoitaikhoan.Size = new Size(46, 25);
+            nudlaoitaikhoan.TabIndex = 3;
             // 
             // panel38
             // 
@@ -412,7 +414,7 @@
             // panel46
             // 
             panel46.Controls.Add(panel47);
-            panel46.Controls.Add(textBox15);
+            panel46.Controls.Add(tenhienthi);
             panel46.Controls.Add(tentaikhoan);
             panel46.Location = new Point(3, 67);
             panel46.Name = "panel46";
@@ -426,13 +428,13 @@
             panel47.Size = new Size(250, 125);
             panel47.TabIndex = 2;
             // 
-            // textBox15
+            // tenhienthi
             // 
-            textBox15.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox15.Location = new Point(163, 14);
-            textBox15.Name = "textBox15";
-            textBox15.Size = new Size(260, 34);
-            textBox15.TabIndex = 1;
+            tenhienthi.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tenhienthi.Location = new Point(163, 14);
+            tenhienthi.Name = "tenhienthi";
+            tenhienthi.Size = new Size(260, 34);
+            tenhienthi.TabIndex = 1;
             // 
             // tentaikhoan
             // 
@@ -447,7 +449,7 @@
             // pane
             // 
             pane.Controls.Add(panel49);
-            pane.Controls.Add(textBox16);
+            pane.Controls.Add(tendangnhap);
             pane.Controls.Add(idtaikhoan);
             pane.Location = new Point(3, 3);
             pane.Name = "pane";
@@ -461,13 +463,13 @@
             panel49.Size = new Size(250, 125);
             panel49.TabIndex = 2;
             // 
-            // textBox16
+            // tendangnhap
             // 
-            textBox16.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox16.Location = new Point(163, 17);
-            textBox16.Name = "textBox16";
-            textBox16.Size = new Size(260, 34);
-            textBox16.TabIndex = 1;
+            tendangnhap.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tendangnhap.Location = new Point(163, 17);
+            tendangnhap.Name = "tendangnhap";
+            tendangnhap.Size = new Size(260, 34);
+            tendangnhap.TabIndex = 1;
             // 
             // idtaikhoan
             // 
@@ -508,6 +510,7 @@
             // 
             // danhsachtaikhoan
             // 
+            danhsachtaikhoan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             danhsachtaikhoan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             danhsachtaikhoan.Location = new Point(9, 85);
             danhsachtaikhoan.Name = "danhsachtaikhoan";
@@ -534,6 +537,7 @@
             xemtaikhoan.TabIndex = 3;
             xemtaikhoan.Text = "Xem";
             xemtaikhoan.UseVisualStyleBackColor = true;
+            xemtaikhoan.Click += xemtaikhoan_Click;
             // 
             // suâtikhoan
             // 
@@ -543,6 +547,7 @@
             suâtikhoan.TabIndex = 2;
             suâtikhoan.Text = "Sửa";
             suâtikhoan.UseVisualStyleBackColor = true;
+            suâtikhoan.Click += suâtikhoan_Click;
             // 
             // xoataikhoan
             // 
@@ -552,6 +557,7 @@
             xoataikhoan.TabIndex = 1;
             xoataikhoan.Text = "XOÁ";
             xoataikhoan.UseVisualStyleBackColor = true;
+            xoataikhoan.Click += xoataikhoan_Click;
             // 
             // themtaikhoan
             // 
@@ -561,6 +567,7 @@
             themtaikhoan.TabIndex = 0;
             themtaikhoan.Text = "Thêm";
             themtaikhoan.UseVisualStyleBackColor = true;
+            themtaikhoan.Click += themtaikhoan_Click;
             // 
             // banan4
             // 
@@ -617,7 +624,7 @@
             // 
             // panel32
             // 
-            panel32.Controls.Add(comboBox6);
+            panel32.Controls.Add(cbtrangthai);
             panel32.Controls.Add(panel33);
             panel32.Controls.Add(trangthaiban);
             panel32.Location = new Point(0, 142);
@@ -625,13 +632,13 @@
             panel32.Size = new Size(438, 69);
             panel32.TabIndex = 4;
             // 
-            // comboBox6
+            // cbtrangthai
             // 
-            comboBox6.FormattingEnabled = true;
-            comboBox6.Location = new Point(166, 19);
-            comboBox6.Name = "comboBox6";
-            comboBox6.Size = new Size(260, 26);
-            comboBox6.TabIndex = 3;
+            cbtrangthai.FormattingEnabled = true;
+            cbtrangthai.Location = new Point(166, 19);
+            cbtrangthai.Name = "cbtrangthai";
+            cbtrangthai.Size = new Size(260, 26);
+            cbtrangthai.TabIndex = 3;
             // 
             // panel33
             // 
@@ -823,6 +830,7 @@
             soban.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             soban.Location = new Point(163, 17);
             soban.Name = "soban";
+            soban.ReadOnly = true;
             soban.Size = new Size(260, 34);
             soban.TabIndex = 1;
             // 
@@ -864,6 +872,7 @@
             xemban.TabIndex = 3;
             xemban.Text = "Xem";
             xemban.UseVisualStyleBackColor = true;
+            xemban.Click += xemban_Click;
             // 
             // suaban
             // 
@@ -873,6 +882,7 @@
             suaban.TabIndex = 2;
             suaban.Text = "Sửa";
             suaban.UseVisualStyleBackColor = true;
+            suaban.Click += suaban_Click;
             // 
             // xoaban
             // 
@@ -882,6 +892,7 @@
             xoaban.TabIndex = 1;
             xoaban.Text = "XOÁ";
             xoaban.UseVisualStyleBackColor = true;
+            xoaban.Click += xoaban_Click;
             // 
             // themban
             // 
@@ -891,6 +902,7 @@
             themban.TabIndex = 0;
             themban.Text = "Thêm";
             themban.UseVisualStyleBackColor = true;
+            themban.Click += themban_Click;
             // 
             // danhmuc
             // 
@@ -1063,7 +1075,7 @@
             // tendanhmuc
             // 
             tendanhmuc.Controls.Add(panel11);
-            tendanhmuc.Controls.Add(textBox1);
+            tendanhmuc.Controls.Add(txtendanhmuc);
             tendanhmuc.Controls.Add(label3);
             tendanhmuc.Location = new Point(3, 67);
             tendanhmuc.Name = "tendanhmuc";
@@ -1077,13 +1089,13 @@
             panel11.Size = new Size(250, 125);
             panel11.TabIndex = 2;
             // 
-            // textBox1
+            // txtendanhmuc
             // 
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(163, 14);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(260, 34);
-            textBox1.TabIndex = 1;
+            txtendanhmuc.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtendanhmuc.Location = new Point(163, 14);
+            txtendanhmuc.Name = "txtendanhmuc";
+            txtendanhmuc.Size = new Size(260, 34);
+            txtendanhmuc.TabIndex = 1;
             // 
             // label3
             // 
@@ -1098,7 +1110,7 @@
             // iddanhmuc
             // 
             iddanhmuc.Controls.Add(panel15);
-            iddanhmuc.Controls.Add(textBox3);
+            iddanhmuc.Controls.Add(txiddanhmuc);
             iddanhmuc.Controls.Add(label4);
             iddanhmuc.Location = new Point(3, 3);
             iddanhmuc.Name = "iddanhmuc";
@@ -1112,13 +1124,14 @@
             panel15.Size = new Size(250, 125);
             panel15.TabIndex = 2;
             // 
-            // textBox3
+            // txiddanhmuc
             // 
-            textBox3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(163, 17);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(260, 34);
-            textBox3.TabIndex = 1;
+            txiddanhmuc.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txiddanhmuc.Location = new Point(163, 17);
+            txiddanhmuc.Name = "txiddanhmuc";
+            txiddanhmuc.ReadOnly = true;
+            txiddanhmuc.Size = new Size(260, 34);
+            txiddanhmuc.TabIndex = 1;
             // 
             // label4
             // 
@@ -1132,6 +1145,7 @@
             // 
             // bangdanhmuc
             // 
+            bangdanhmuc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             bangdanhmuc.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             bangdanhmuc.Location = new Point(9, 82);
             bangdanhmuc.Name = "bangdanhmuc";
@@ -1158,6 +1172,7 @@
             xemdanhmuc.TabIndex = 3;
             xemdanhmuc.Text = "Xem";
             xemdanhmuc.UseVisualStyleBackColor = true;
+            xemdanhmuc.Click += xemdanhmuc_Click;
             // 
             // suadanhmuc
             // 
@@ -1167,6 +1182,7 @@
             suadanhmuc.TabIndex = 2;
             suadanhmuc.Text = "Sửa";
             suadanhmuc.UseVisualStyleBackColor = true;
+            suadanhmuc.Click += suadanhmuc_Click;
             // 
             // xaodanhmuc
             // 
@@ -1176,6 +1192,7 @@
             xaodanhmuc.TabIndex = 1;
             xaodanhmuc.Text = "XOÁ";
             xaodanhmuc.UseVisualStyleBackColor = true;
+            xaodanhmuc.Click += xaodanhmuc_Click;
             // 
             // themdanhmuc
             // 
@@ -1185,6 +1202,7 @@
             themdanhmuc.TabIndex = 0;
             themdanhmuc.Text = "Thêm";
             themdanhmuc.UseVisualStyleBackColor = true;
+            themdanhmuc.Click += themdanhmuc_Click;
             // 
             // thucan3
             // 
@@ -1230,7 +1248,7 @@
             // 
             // thucan17
             // 
-            thucan17.Controls.Add(thucan14);
+            thucan17.Controls.Add(gia);
             thucan17.Controls.Add(thuan11);
             thucan17.Controls.Add(thucan22);
             thucan17.Controls.Add(thucan12);
@@ -1240,15 +1258,15 @@
             thucan17.Size = new Size(444, 372);
             thucan17.TabIndex = 1;
             // 
-            // thucan14
+            // gia
             // 
-            thucan14.Controls.Add(sotienthucan);
-            thucan14.Controls.Add(panel14);
-            thucan14.Controls.Add(giathucan);
-            thucan14.Location = new Point(3, 207);
-            thucan14.Name = "thucan14";
-            thucan14.Size = new Size(438, 58);
-            thucan14.TabIndex = 3;
+            gia.Controls.Add(sotienthucan);
+            gia.Controls.Add(panel14);
+            gia.Controls.Add(giathucan);
+            gia.Location = new Point(3, 207);
+            gia.Name = "gia";
+            gia.Size = new Size(438, 58);
+            gia.TabIndex = 3;
             // 
             // sotienthucan
             // 
@@ -1277,7 +1295,7 @@
             // 
             // thuan11
             // 
-            thuan11.Controls.Add(comboBox1);
+            thuan11.Controls.Add(loiamuc);
             thuan11.Controls.Add(panel12);
             thuan11.Controls.Add(danhmucthucan);
             thuan11.Location = new Point(3, 137);
@@ -1285,13 +1303,13 @@
             thuan11.Size = new Size(438, 69);
             thuan11.TabIndex = 4;
             // 
-            // comboBox1
+            // loiamuc
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(109, 23);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(314, 26);
-            comboBox1.TabIndex = 3;
+            loiamuc.FormattingEnabled = true;
+            loiamuc.Location = new Point(109, 23);
+            loiamuc.Name = "loiamuc";
+            loiamuc.Size = new Size(314, 26);
+            loiamuc.TabIndex = 3;
             // 
             // panel12
             // 
@@ -1313,7 +1331,7 @@
             // thucan22
             // 
             thucan22.Controls.Add(panel10);
-            thucan22.Controls.Add(textBox2);
+            thucan22.Controls.Add(tenmon);
             thucan22.Controls.Add(tenmonan);
             thucan22.Location = new Point(3, 67);
             thucan22.Name = "thucan22";
@@ -1327,13 +1345,13 @@
             panel10.Size = new Size(250, 125);
             panel10.TabIndex = 2;
             // 
-            // textBox2
+            // tenmon
             // 
-            textBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(109, 14);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(314, 34);
-            textBox2.TabIndex = 1;
+            tenmon.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tenmon.Location = new Point(109, 14);
+            tenmon.Name = "tenmon";
+            tenmon.Size = new Size(314, 34);
+            tenmon.TabIndex = 1;
             // 
             // tenmonan
             // 
@@ -1367,8 +1385,10 @@
             txusernam.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txusernam.Location = new Point(109, 18);
             txusernam.Name = "txusernam";
+            txusernam.ReadOnly = true;
             txusernam.Size = new Size(314, 34);
             txusernam.TabIndex = 1;
+            txusernam.TextChanged += txusernam_TextChanged;
             // 
             // lpusername
             // 
@@ -1409,6 +1429,7 @@
             suathucan.TabIndex = 2;
             suathucan.Text = "Sửa";
             suathucan.UseVisualStyleBackColor = true;
+            suathucan.Click += suathucan_Click;
             // 
             // xoathucan
             // 
@@ -1418,6 +1439,7 @@
             xoathucan.TabIndex = 1;
             xoathucan.Text = "XOÁ";
             xoathucan.UseVisualStyleBackColor = true;
+            xoathucan.Click += xoathucan_Click;
             // 
             // themthucan
             // 
@@ -1427,6 +1449,7 @@
             themthucan.TabIndex = 0;
             themthucan.Text = "Thêm";
             themthucan.UseVisualStyleBackColor = true;
+            themthucan.Click += themthucan_Click;
             // 
             // thuan25
             // 
@@ -1477,6 +1500,7 @@
             thongke.TabIndex = 2;
             thongke.Text = "Thống kê";
             thongke.UseVisualStyleBackColor = true;
+            thongke.Click += thongke_Click;
             // 
             // thoigianrabill
             // 
@@ -1506,12 +1530,14 @@
             // 
             // tongbill
             // 
+            tongbill.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             tongbill.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             tongbill.Location = new Point(0, -2);
             tongbill.Name = "tongbill";
             tongbill.RowHeadersWidth = 51;
             tongbill.Size = new Size(917, 402);
             tongbill.TabIndex = 0;
+            tongbill.CellContentClick += tongbill_CellContentClick;
             // 
             // Admin
             // 
@@ -1540,6 +1566,7 @@
             panel36.ResumeLayout(false);
             panel37.ResumeLayout(false);
             panel37.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nudlaoitaikhoan).EndInit();
             panel39.ResumeLayout(false);
             panel39.PerformLayout();
             panel40.ResumeLayout(false);
@@ -1595,8 +1622,8 @@
             thucan13.ResumeLayout(false);
             thucan13.PerformLayout();
             thucan17.ResumeLayout(false);
-            thucan14.ResumeLayout(false);
-            thucan14.PerformLayout();
+            gia.ResumeLayout(false);
+            gia.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)sotienthucan).EndInit();
             thuan11.ResumeLayout(false);
             thuan11.PerformLayout();
@@ -1625,17 +1652,17 @@
         private TextBox kiemthucan;
         private Button timthucan;
         private Panel thucan17;
-        private Panel thucan14;
+        private Panel gia;
         private NumericUpDown sotienthucan;
         private Panel panel14;
         private Label giathucan;
         private Panel thuan11;
-        private ComboBox comboBox1;
+        private ComboBox loiamuc;
         private Panel panel12;
         private Label danhmucthucan;
         private Panel thucan22;
         private Panel panel10;
-        private TextBox textBox2;
+        private TextBox tenmon;
         private Label tenmonan;
         private Panel thucan12;
         private Panel panel8;
@@ -1672,11 +1699,11 @@
         private Label label2;
         private Panel tendanhmuc;
         private Panel panel11;
-        private TextBox textBox1;
+        private TextBox txtendanhmuc;
         private Label label3;
         private Panel iddanhmuc;
         private Panel panel15;
-        private TextBox textBox3;
+        private TextBox txiddanhmuc;
         private Label label4;
         private DataGridView bangdanhmuc;
         private Panel panel2;
@@ -1740,11 +1767,11 @@
         private Label label12;
         private Panel panel46;
         private Panel panel47;
-        private TextBox textBox15;
+        private TextBox tenhienthi;
         private Label tentaikhoan;
         private Panel pane;
         private Panel panel49;
-        private TextBox textBox16;
+        private TextBox tendangnhap;
         private Label idtaikhoan;
         private Panel panel35;
         private TextBox textBox10;
@@ -1756,7 +1783,7 @@
         private Button xoataikhoan;
         private Button themtaikhoan;
         private Button datlaimatkhautaikhoan;
-        private ComboBox comboBox5;
-        private ComboBox comboBox6;
+        private ComboBox cbtrangthai;
+        private NumericUpDown nudlaoitaikhoan;
     }
 }

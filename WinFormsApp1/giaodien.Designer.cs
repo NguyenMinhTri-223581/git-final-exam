@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(giaodien));
             menuStrip1 = new MenuStrip();
             adminToolStripMenuItem = new ToolStripMenuItem();
-            đăngXuấtToolStripMenuItem = new ToolStripMenuItem();
             thôngTinTàiKhoảnToolStripMenuItem = new ToolStripMenuItem();
             tạoTàiKhoảnNhânViênToolStripMenuItem = new ToolStripMenuItem();
+            đăngXuấtToolStripMenuItem1 = new ToolStripMenuItem();
             panel2 = new Panel();
             listViewhoadon = new ListView();
             columnHeader1 = new ColumnHeader();
@@ -70,28 +70,28 @@
             // 
             // adminToolStripMenuItem
             // 
-            adminToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { đăngXuấtToolStripMenuItem });
             resources.ApplyResources(adminToolStripMenuItem, "adminToolStripMenuItem");
             adminToolStripMenuItem.Name = "adminToolStripMenuItem";
             adminToolStripMenuItem.Click += adminToolStripMenuItem_Click;
             // 
-            // đăngXuấtToolStripMenuItem
-            // 
-            đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            resources.ApplyResources(đăngXuấtToolStripMenuItem, "đăngXuấtToolStripMenuItem");
-            đăngXuấtToolStripMenuItem.Click += đăngXuấtToolStripMenuItem_Click;
-            // 
             // thôngTinTàiKhoảnToolStripMenuItem
             // 
-            thôngTinTàiKhoảnToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { tạoTàiKhoảnNhânViênToolStripMenuItem });
+            thôngTinTàiKhoảnToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { tạoTàiKhoảnNhânViênToolStripMenuItem, đăngXuấtToolStripMenuItem1 });
             resources.ApplyResources(thôngTinTàiKhoảnToolStripMenuItem, "thôngTinTàiKhoảnToolStripMenuItem");
             thôngTinTàiKhoảnToolStripMenuItem.Name = "thôngTinTàiKhoảnToolStripMenuItem";
+            thôngTinTàiKhoảnToolStripMenuItem.Click += thôngTinTàiKhoảnToolStripMenuItem_Click;
             // 
             // tạoTàiKhoảnNhânViênToolStripMenuItem
             // 
             tạoTàiKhoảnNhânViênToolStripMenuItem.Name = "tạoTàiKhoảnNhânViênToolStripMenuItem";
             resources.ApplyResources(tạoTàiKhoảnNhânViênToolStripMenuItem, "tạoTàiKhoảnNhânViênToolStripMenuItem");
             tạoTàiKhoảnNhânViênToolStripMenuItem.Click += tạoTàiKhoảnNhânViênToolStripMenuItem_Click_1;
+            // 
+            // đăngXuấtToolStripMenuItem1
+            // 
+            đăngXuấtToolStripMenuItem1.Name = "đăngXuấtToolStripMenuItem1";
+            resources.ApplyResources(đăngXuấtToolStripMenuItem1, "đăngXuấtToolStripMenuItem1");
+            đăngXuấtToolStripMenuItem1.Click += đăngXuấtToolStripMenuItem1_Click;
             // 
             // panel2
             // 
@@ -242,7 +242,6 @@
         #endregion
         private MenuStrip menuStrip1;
         private ToolStripMenuItem adminToolStripMenuItem;
-        private ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private Panel panel2;
         private Panel panel3;
         private ListView listViewhoadon;
@@ -264,5 +263,6 @@
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
         private TextBox tongtien;
+        private ToolStripMenuItem đăngXuấtToolStripMenuItem1;
     }
 }

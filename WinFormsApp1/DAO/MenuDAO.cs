@@ -31,5 +31,36 @@ namespace WinFormsApp1.DAO
             }
             return listMenu;
         }
+        public DataTable GetListMenu()
+        {
+            return DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.LOAIMON ");
+
+        }
+        public bool InsertMenu(string name )
+        {
+            string query = string.Format("INSERT dbo.LOAIMON (tenloai) VALUES (N'{0}' )", name);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool UpdateMenu( string name, int id )
+        {
+            string query = string.Format("UPDATE dbo.LOAIMON SET tenloai = N'{0}' WHERE ID= {1}  ", name , id);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool DeleteMenu(int id)
+        {
+
+            FoodDAO.Instance.DeleteFoodByMenuID(id);
+
+            string query = string.Format(" Delete LOAIMON WHERE ID = {0} ", id);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
     }
 }

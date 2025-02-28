@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using WinFormsApp1.DAO;
+using WinFormsApp1.DTO;
 
 namespace WinFormsApp1
 {
@@ -32,7 +33,8 @@ namespace WinFormsApp1
 
             if (login( UserName, Password))
             {
-                giaodien giaodien = new giaodien();
+                Account loginAccount = AccountDAO.Instance.GetAccountByUserName(UserName);
+                giaodien giaodien = new giaodien(loginAccount);
                 this.Hide();
                 giaodien.ShowDialog();
                 this.Show();

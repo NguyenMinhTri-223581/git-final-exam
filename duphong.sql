@@ -411,5 +411,126 @@ GO
 
 exec USP_SwitchTabel
 @idTable = 5 , @idTable2 = 6 
-SELECT * FROM dbo.THUCDON
 
+
+ALTER PROC USP_GetListBillByDate
+@checkin date, @checkOut date
+as
+BEGIN
+	SELECT t.TEN AS [Tên bàn],b.TONGTIEN AS [Tổng tiền],NGAYVAO AS [Ngày Vào], NGAYRA AS [Ngày Ra], GIAMGIA AS [Giảm giá] FROM dbo.HOADON AS b, dbo.BAN AS t, dbo.CTHOADON AS hd, dbo.THUCDON AS td 
+	WHERE NGAYVAO >= @checkin AND NGAYRA <= @checkOut AND b.STATUS = 1
+	AND t.ID = b.IDBANG 
+END
+GO
+
+DELETE dbo.HOADON
+DELETE dbo.CTHOADON
+
+ALTER TABLE dbo.HOADON ADD TONGTIEN FLOAT
+
+SELECT * from dbo.THUCDON
+ SELECT * FROM dbo.LOAIMON WHERE ID =1
+
+ INSERT dbo.THUCDON (ID,tenmon, idloai, gia) VALUES (N'', 0, 0, 0)
+
+ -- Tạo cột mới với IDENTITY
+ALTER TABLE DBO.BAN ADD ID_NEW INT IDENTITY(1,1);
+
+-- Sao chép dữ liệu từ cột cũ sang cột mới
+UPDATE LOAIMON SET ID_NEW = ID;
+
+-- Xóa cột cũ
+ALTER TABLE LOAIMON DROP COLUMN ID;
+
+-- Đổi tên cột mới thành ID
+EXEC sp_rename 'LOAIMON.ID_NEW', 'ID', 'COLUMN';
+
+SELECT name, is_identity 
+FROM sys.columns 
+WHERE object_id = OBJECT_ID('dbo.LOAIMON');
+
+
+
+EXEC sp_fkeys @pktable_name = 'HOADON';
+ALTER TABLE BAN DROP CONSTRAINT PK__BAN__3214EC270AD2A005;
+ALTER TABLE HOADON DROP CONSTRAINT FK_HOADON_BAN
+SELECT name
+FROM sys.foreign_keys
+WHERE parent_object_id = OBJECT_ID('CTHOADON');
+INSERT INTO THUCDON(tenmon,idloai,gia ) VALUES (1, 2, 3);
+
+UPDATE dbo.THUCDON SET tenmon = N'', idloai = 4, gia = 0 WHERE  ID= 4
+
+CREATE TRIGGER UTG_DeleteBillInfo
+ON dbo.CTHOADON FOR Delete
+AS
+BEGIN
+	DECLARE @idBillInfo INT
+	Declare @idBill INT
+	SELECT @idBillInfo = ID, @idBill = deleted.IDHOADON FROM deleted
+
+	Declare @idTable INT
+	SELECT @idTable = IDBANG FROM  dbo.HOADON WHERE ID = @idBill
+
+	DECLARE @count INT = 0
+
+	SELECT @count = COUNT(*) FROM dbo.CTHOADON AS bi, dbo.HOADON WHERE IDHOADON = @idBill AND HOADON.ID = @idBillInfo
+
+	IF (@count = 0)
+		UPDATE dbo.BAN SET STATUS = N'Trống' WHERE ID = @idTable
+
+END
+GO
+SELECT * FROM dbo.TAIKHOAN WHERE TEN =N''
+
+
+ALTER TABLE dbo. TAIKHOAN
+
+ADD CONSTRAINT DF_TAIKHAON_PASSWORD DEFAULT '0' FOR PASSWORD;
+
+
+
+
+SELECT * FROM dbo.TAIKHOAN WHERE TENTAIKHOAN = 'tri1111'
+SELECT TEN , TENTAIKHOAN , TYPE FROM dbo.TAIKHOAN
+
+SELECT * FROM dbo.BAN WHERE ID = 1
+SELECT * FROM dbo.HOADON
+INSERT dbo.LOAIMON (tenloai) VALUES ('đô chiên')
+DELETE dbo.BAN 
+
+-- Chèn dữ liệu vào bảng BAN trước
+INSERT INTO dbo.BAN (ID, TEN, STATUS) VALUES ( N'Bàn 1', N'Trống')
+
+-- Sau đó mới chèn dữ liệu vào bảng HOADON
+INSERT INTO dbo.HOADON 
+(NGAYVAO,NGAYRA,IDBANG,STATUS,GIAMGIA,TONGTIEN) 
+VALUES ( GETDATE(),null, 1, 1, 0, 120000)
+SELECT * FROM dbo.TAIKHOAN WHERE TENTAIKHOAN = 'tri1111' 
+SELECT * FROM dbo.TAIKHOAN WHERE TENTAIKHOAN = 'tri1111'
+
+CREATE PROC USP_UpdateAccount
+@userName NVARCHAR(100), @displayName NVARCHAR(100), @password NVARCHAR(100), @newPassword NVARCHAR(100)
+AS
+BEGIN
+	DECLARE @isRighPass INT = 0
+
+	SELECT @isRighPass = COUNT(*) FROM dbo.TAIKHOAN WHERE TENTAIKHOAN = @userName AND PASSWORD = @password
+
+	IF (@isRighPass = 1)
+	BEGIN
+		IF (@newPassword = NULL OR @newPassword ='')
+		BEGIN
+			UPDATE dbo.TAIKHOAN SET TEN = @displayname WHERE TENTAIKHOAN = @userName
+		END
+		ELSE
+			UPDATE dbo.TAIKHOAN SET TEN = @displayname, PASSWORD = @newPassword WHERE TENTAIKHOAN = @userName
+	END
+
+END
+GO
+
+EXEC USP_UpdateAccount tri1111 , NguyễnMinhTrí , tri1111 , 1
+
+SELECT @isRighPass = COUNT(*) FROM dbo.TAIKHOAN WHERE TENTAIKHOAN = @userName AND PASSWORD = @password
+PRINT @isRighPass

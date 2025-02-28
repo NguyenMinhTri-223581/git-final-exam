@@ -121,32 +121,32 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="đăngXuấtToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 26</value>
-  </data>
-  <data name="đăngXuấtToolStripMenuItem.Text" xml:space="preserve">
-    <value>Đăng xuất</value>
-  </data>
   <data name="adminToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt, style=Bold</value>
   </data>
   <data name="adminToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 22</value>
+    <value>65, 24</value>
   </data>
   <data name="adminToolStripMenuItem.Text" xml:space="preserve">
     <value>Admin</value>
   </data>
   <data name="tạoTàiKhoảnNhânViênToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 26</value>
+    <value>261, 26</value>
   </data>
   <data name="tạoTàiKhoảnNhânViênToolStripMenuItem.Text" xml:space="preserve">
-    <value>Tạo tài khoản nhân viên</value>
+    <value>Đổi Mật Khẩu Nhân Viên</value>
+  </data>
+  <data name="đăngXuấtToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>261, 26</value>
+  </data>
+  <data name="đăngXuấtToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Đăng xuất</value>
   </data>
   <data name="thôngTinTàiKhoảnToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt, style=Bold</value>
   </data>
   <data name="thôngTinTàiKhoảnToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 22</value>
+    <value>158, 24</value>
   </data>
   <data name="thôngTinTàiKhoảnToolStripMenuItem.Text" xml:space="preserve">
     <value>Thông tin tài khoản</value>
@@ -155,7 +155,7 @@
     <value>0, 0</value>
   </data>
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1151, 26</value>
+    <value>1151, 28</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
@@ -597,12 +597,6 @@
   <data name="&gt;&gt;adminToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;đăngXuấtToolStripMenuItem.Name" xml:space="preserve">
-    <value>đăngXuấtToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;đăngXuấtToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;thôngTinTàiKhoảnToolStripMenuItem.Name" xml:space="preserve">
     <value>thôngTinTàiKhoảnToolStripMenuItem</value>
   </data>
@@ -613,6 +607,12 @@
     <value>tạoTàiKhoảnNhânViênToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;tạoTàiKhoảnNhânViênToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;đăngXuấtToolStripMenuItem1.Name" xml:space="preserve">
+    <value>đăngXuấtToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;đăngXuấtToolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;columnHeader1.Name" xml:space="preserve">

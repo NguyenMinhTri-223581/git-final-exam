@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -48,6 +49,37 @@ namespace WinFormsApp1.DAO
             }
 
             return list;
+        }
+        public void DeleteFoodByMenuID (int id) 
+        {
+            DataProvider.Instance.ExecuteQuery("DELETE dbo.THUCDON WHERE idloai = " + id);
+
+        }
+
+        public bool InsertFood(string name, int id, float price)
+        {
+            string query = string.Format("INSERT dbo.THUCDON (tenmon, idloai, gia) VALUES (N'{0}', {1} , {2} )", name, id, price);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool UpdateFood(int idfood ,string name, int id, float price)
+        {
+            string query = string.Format("UPDATE dbo.THUCDON SET tenmon = N'{0}' , idloai = {1} , gia = {2} WHERE ID= {3} ", name, id, price, idfood);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool DeleteFood(int idfood)
+        {
+            BillInfoDAO.Instance.DeleteBillInfoByFoodID(idfood);
+
+            string query = string.Format(" Delete THUCDON WHERE ID = {0} ",idfood);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
         }
     }
 }

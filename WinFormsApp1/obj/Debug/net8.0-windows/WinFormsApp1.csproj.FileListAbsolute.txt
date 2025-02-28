@@ -69,3 +69,4 @@ D:\appquanly\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Syste
 D:\appquanly\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
 D:\appquanly\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.csproj.AssemblyReference.cache
 D:\appquanly\WinFormsApp1\obj\Debug\net8.0-windows\WinForms.E4050A35.Up2Date
+D:\appquanly\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.sourcelink.json

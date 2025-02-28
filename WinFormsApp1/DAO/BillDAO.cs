@@ -35,14 +35,19 @@ namespace WinFormsApp1.DAO
             }
             return -1;
         }
-        public void CheckOut(int id, int Discount)
+        public void CheckOut(int id, int Discount, float totalPrice)
         {
-            string query = "UPDATE dbo.HOADON set STATUS = 1 , " + " GIAMGIA  = " + Discount+ " WHERE ID =  "+id;
+            string query = "UPDATE dbo.HOADON set NGAYRA = GETDATE(), STATUS = 1 , " + " GIAMGIA  = " + Discount+", TONGTIEN = "+ totalPrice +" WHERE ID =  "+id;
             DataProvider.Instance.ExecuteNonQuery(query);
         }
         public void InsertBill(int id)
         {
             DataProvider.Instance.ExecuteNonQuery("exec USP_InsertBill @idTable", new object[] {id});
+        }
+
+        public DataTable GetBillListByDate (DateTime checkIn, DateTime checkOut)
+        {
+            return DataProvider.Instance.ExecuteQuery("EXEC USP_GetListBillByDate @checkin , @checkOut", new object[] {checkIn, checkOut});
         }
         public int GetMaxIDBill()
         {
@@ -55,6 +60,11 @@ namespace WinFormsApp1.DAO
             {
                 return 1;
             }
+
+        }
+        public void DeleteBillByTableID(int id)
+        {
+            DataProvider.Instance.ExecuteQuery("DELETE dbo.HOADON WHERE IDBANG = " + id);
 
         }
     }

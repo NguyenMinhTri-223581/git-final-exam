@@ -45,5 +45,36 @@ namespace WinFormsApp1.DAO
             return tablelist;
 
         }
+        public DataTable GetListTable()
+        {
+            return DataProvider.Instance.ExecuteQuery("\r\nSELECT * FROM dbo.BAN ");
+
+        }
+        public bool InsertTable(string name, string status)
+        {
+            string query = string.Format("INSERT dbo.BAN (TEN , STATUS) VALUES (N'{0}', N'{1}' )", name, status);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool UpdateTable(string name, string status , int id)
+        {
+            string query = string.Format("UPDATE dbo.BAN SET TEN = N'{0}' , STATUS =N'{1}' WHERE ID= {2} ", name,  status, id );
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool DeleteTable(int id)
+        {
+            BillDAO.Instance.DeleteBillByTableID(id);
+
+            string query = string.Format(" Delete BAN WHERE ID = {0} ", id);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
     }
 }
