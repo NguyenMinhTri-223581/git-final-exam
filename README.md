@@ -1,2 +1,1 @@
-# Git Practice
-Giới thiệu: Tôi là <Nguyễn Minh Trí>, MSSV <223581>.
+Gi?i thi?u: Tôi là <H? Tên>, MSSV <MSSV>.
