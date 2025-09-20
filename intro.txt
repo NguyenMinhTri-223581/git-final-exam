@@ -13,3 +13,9 @@ Kỹ năng:
 1. Lập trình Python
 2. Sử dụng Git và GitHub
 3. Làm việc nhóm
+Kế hoạch học tập:
+- Hoàn thành môn Hệ điều hành trong học kỳ này.
+- Nâng cao kỹ năng lập trình Python.
+- Tìm hiểu JavaScript và React.
+- Rèn luyện kỹ năng thuyết trình.
+- Tham gia nhiều dự án nhóm để cải thiện teamwork.
