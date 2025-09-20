@@ -1,5 +1,3 @@
 Git là công cụ quản lý phiên bản mạnh mẽ.
 Nó giúp làm việc nhóm dễ dàng hơn.
 Tôi đang học cách sử dụng Git.
-Git rất quan trọng trong phát triển phần mềm.
-Tôi cần luyện tập nhiều hơn để thành thạo.
